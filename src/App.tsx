@@ -9,9 +9,32 @@ type ConvertedFile = {
     byteSize: number;
 };
 
-function convertToStandardFields(input: unknown): unknown {
+function convertToStandardFields(input: any): any {
     // Placeholder conversion logic. Replace this with your object-to-object mapping.
-    return input;
+    const newObject = {
+        spec: "chara_card_v2",
+        spec_version: "2.0",
+        "data": {
+            "name": input?.name ?? input?.data?.name ?? "Unknown",
+            "description": input?.description ?? input?.data?.description ?? input?.personality ?? input?.data?.personality ?? "Character description goes here.",
+            "personality": "", // Obsolete
+            "first_mes": input?.first_mes ?? input?.data?.first_mes ?? input?.greeting ?? input?.data?.greeting ?? "\"Hey, {{user}}, can I ask you a question?\"",
+            "avatar": input?.avatar ?? input?.data?.avatar ?? input?.imageUrl ?? input?.data?.imageUrl ?? "",
+            "mes_example": input?.mes_example ?? input?.data?.mes_example ?? input?.exampleConversation ?? input?.data?.exampleConversation ?? "",
+            "scenario": input?.scenario ?? input?.data?.scenario ?? "",
+            "creator_notes": input?.creator_notes ?? input?.data?.creator_notes ?? "Creator notes go here.",
+            "system_prompt": input?.system_prompt ?? input?.data?.system_prompt ?? "",
+            "post_history_instructions": input?.post_history_instructions ?? input?.data?.post_history_instructions ?? "",
+            "alternative_greetings": input?.alternative_greetings ?? input?.data?.alternative_greetings ?? [],
+            "tags": input?.tags ?? input?.data?.tags ?? [],
+            "creator": input?.creator ?? input?.data?.creator ?? "",
+            "character_version": "main",
+            "extensions": input?.extensions ?? input?.data?.extensions ?? {},
+            "character_book": input?.character_book ?? input?.data?.character_book ?? {}
+        }
+    }
+    
+    return newObject;
 }
 
 function App() {
