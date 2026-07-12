@@ -1,0 +1,148 @@
+.App {
+  min-height: 100vh;
+  color: #202124;
+  background: linear-gradient(145deg, #f4f7fb 0%, #eaf0f9 100%);
+}
+
+.App-header {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-bottom: 1px solid #dce4f3;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: clamp(1.2rem, 1.2vw + 1rem, 1.8rem);
+}
+
+.workspace {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.drop-pane,
+.output-pane {
+  flex: 1;
+  min-height: 360px;
+  background: #ffffff;
+  border: 2px solid #dce4f3;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(31, 52, 87, 0.08);
+}
+
+.drop-pane {
+  border-style: dashed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.drop-pane-active {
+  border-color: #1f6feb;
+  background: #f0f6ff;
+}
+
+.drop-pane h2,
+.output-pane h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.helper-text {
+  margin: 4px 0 10px;
+  color: #667085;
+}
+
+.hidden-input {
+  display: none;
+}
+
+.secondary-button {
+  border: 1px solid #bfd1ef;
+  background: #f7faff;
+  color: #1f3e6f;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 9px 14px;
+  cursor: pointer;
+}
+
+.secondary-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.output-pane-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.placeholder-text {
+  color: #667085;
+}
+
+.error-text {
+  color: #b42318;
+  margin: 0 0 10px;
+}
+
+.download-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.download-item {
+  border: 1px solid #dce4f3;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.source-name,
+.output-name {
+  margin: 0;
+}
+
+.source-name {
+  font-weight: 600;
+}
+
+.output-name {
+  color: #667085;
+  font-size: 0.9rem;
+}
+
+.download-link {
+  text-decoration: none;
+  color: #1f6feb;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .workspace {
+    flex-direction: column;
+  }
+}

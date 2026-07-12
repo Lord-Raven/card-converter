@@ -1,2 +1,1 @@
-# card-converter
-Convert character cards to be importable by Chub.ai
+This is a tool for convertering JSON character data to Chub-importable JSON.
